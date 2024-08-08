@@ -1,9 +1,10 @@
-//Define a dart class named CounterDatasource
 import '../../../data/models/counter_model.dart';
+import 'dart:math';
 
+//Define a dart class named CounterDatasource
 class CounterDatasource {
   //Private variable '_value' of type int
-  int _value = 3994; //default stored
+  int _value = Random().nextInt(10000); //default stored
 
   // Asynchronous function to retrieve the counter value as a CounterModel
   Future<CounterModel> getCounter() async {
