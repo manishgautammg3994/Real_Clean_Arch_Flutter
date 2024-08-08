@@ -14,16 +14,13 @@ sealed class CounterState with _$CounterState {
     required String message,
     required CounterEntity counter,
     @Default(false) bool isLoading,
-  }) =
-      _CounterError;
+  }) = _CounterError;
   const CounterState._(); // Private constructor for shared methods
 
-  @override
-  CounterEntity get counter => when(
-    initial: (counter, _) => counter,
-    loaded: (counter, _) => counter,
-    error: (message, counter, _) => counter,
-  );
-
-
+  // @override
+  // CounterEntity get counter => when(
+  //   initial: (counter, _) => counter,
+  //   loaded: (counter, _) => counter,
+  //   error: (message, counter, _) => counter,
+  // );
 }

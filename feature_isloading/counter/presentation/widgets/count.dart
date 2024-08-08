@@ -18,8 +18,9 @@ class Count extends StatelessWidget {
       listener: (BuildContext context, CounterState state) {
         if (state.isLoading) {
           print("if" + state.isLoading.toString() + "${state.counter.value}");
-          ScaffoldMessenger.of(context)
-              .showSnackBar(SnackBar(content: Text("${state.counter.value}")));
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              content: Text("${state.counter.value}"),
+              duration: Duration(seconds: 10)));
         } else {
           print("else" + state.isLoading.toString() + "${state.counter.value}");
           ScaffoldMessenger.of(context).hideCurrentSnackBar();

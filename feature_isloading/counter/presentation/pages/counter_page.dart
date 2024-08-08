@@ -1,7 +1,7 @@
 import '../../data/repositories/counter_repository_impl.dart';
 import '../../domain/repositories/counter_repository.dart';
 
-import '../../data/datasources/local/counter_datasource.dart';
+import '../../data/datasources/local/counter_datasource_impl.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,7 +24,7 @@ class CounterPage extends StatefulWidget {
 class _CounterPageState extends State<CounterPage> {
   @override
   Widget build(BuildContext context) {
-    final counterDatasource = CounterDatasource();
+    final counterDatasource = CounterDatasourceImpl();
     final CounterRepository counterRepository =
         CounterRepositoryImpl(counterDatasource);
     final GetCounterUseCase getCounterUseCase =
