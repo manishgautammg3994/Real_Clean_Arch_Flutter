@@ -4,7 +4,7 @@ import '../../../data/models/counter_model.dart';
 import 'counter_datasource.dart';
 
 //Define a dart class named CounterDatasource
-class CounterDatasourceImpl extends CounterDatasource {
+class CounterDatasourceImpl implements CounterDatasource {
   //Private variable '_value' of type int
   int _value = Random().nextInt(10000); //default stored
 
