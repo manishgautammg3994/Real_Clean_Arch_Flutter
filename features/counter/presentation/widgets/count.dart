@@ -5,9 +5,10 @@ class Count extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CounterBloc, CounterState>(
-      builder: (context, state) {
-        int value = state.counter.value;
+    return BlocSelector<CounterBloc, CounterState, int>(
+      selector: (state) =>
+          state.counter.value, // Selects only the counter value from the state
+      builder: (context, value) {
         return Center(
           child: Text(
             value.toString(),
